@@ -73,6 +73,13 @@ V17=st.sidebar.slider("V17", min_value=-25.16, max_value=9.25, value=-0.07, step
 st.sidebar.markdown("""---""")
 
 
+st.markdown("<h3 style='text-align: left; color: black;'>Model Karşılaştırma Grafiği</h3>", unsafe_allow_html=True)
+st.image("model_karsilastir.png", caption="Model Karşilaştirma Grafiği", width=1200, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+
+
+
+
+
 my_dict = {
     "Time":0,
     "V1":0,
@@ -109,6 +116,8 @@ my_dict = {
 scaler = pickle.load(open('RobustScaler', 'rb'))
 model = pickle.load(open('XGB', 'rb'))
 
+
+st.markdown("<h3 style='text-align: left; color: black;'>Prediction</h3>", unsafe_allow_html=True)
 df=pd.DataFrame.from_dict([my_dict])
 st.table(df[["V4","V10","V13","V14","V17","Amount"]])
 
