@@ -106,7 +106,7 @@ my_dict = {
     "Amount": Amount
 }
 
-scaler = pickle.load(open('robustScaler', 'rb'))
+scaler = pickle.load(open('RobustScaler', 'rb'))
 model = pickle.load(open('XGB', 'rb'))
 
 df=pd.DataFrame.from_dict([my_dict])
